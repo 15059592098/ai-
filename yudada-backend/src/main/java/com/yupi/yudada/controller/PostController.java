@@ -85,6 +85,7 @@ public class PostController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/delete")
     public BaseResponse<Boolean> deletePost(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
@@ -217,6 +218,7 @@ public class PostController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/edit")
     public BaseResponse<Boolean> editPost(@RequestBody PostEditRequest postEditRequest, HttpServletRequest request) {
         if (postEditRequest == null || postEditRequest.getId() <= 0) {

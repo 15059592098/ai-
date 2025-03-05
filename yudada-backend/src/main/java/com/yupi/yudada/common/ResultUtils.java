@@ -25,6 +25,7 @@ public class ResultUtils {
      * @param errorCode
      * @return
      */
+    @SuppressWarnings("rawtypes")
     public static BaseResponse error(ErrorCode errorCode) {
         return new BaseResponse<>(errorCode);
     }
@@ -36,6 +37,7 @@ public class ResultUtils {
      * @param message
      * @return
      */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static BaseResponse error(int code, String message) {
         return new BaseResponse(code, null, message);
     }
@@ -46,6 +48,7 @@ public class ResultUtils {
      * @param errorCode
      * @return
      */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static BaseResponse error(ErrorCode errorCode, String message) {
         return new BaseResponse(errorCode.getCode(), null, message);
     }

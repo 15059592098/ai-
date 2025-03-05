@@ -77,6 +77,7 @@ public class AppController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/delete")
     public BaseResponse<Boolean> deleteApp(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
@@ -187,6 +188,7 @@ public class AppController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<AppVO>> listMyAppVOByPage(@RequestBody AppQueryRequest appQueryRequest,
                                                        HttpServletRequest request) {
@@ -212,6 +214,7 @@ public class AppController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/edit")
     public BaseResponse<Boolean> editApp(@RequestBody AppEditRequest appEditRequest, HttpServletRequest request) {
         if (appEditRequest == null || appEditRequest.getId() <= 0) {
@@ -248,6 +251,7 @@ public class AppController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/review")
     @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
     public BaseResponse<Boolean> doAppReview(@RequestBody ReviewRequest reviewRequest, HttpServletRequest request) {

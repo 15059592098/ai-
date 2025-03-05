@@ -35,7 +35,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
 
 /**
  * 题目接口
@@ -78,6 +77,7 @@ public class QuestionController {
         // 在此处将实体类和 DTO 进行转换
         Question question = new Question();
         BeanUtils.copyProperties(questionAddRequest, question);
+        @SuppressWarnings("null")
         List<QuestionContentDTO> questionContentDTO = questionAddRequest.getQuestionContent();
         question.setQuestionContent(JSONUtil.toJsonStr(questionContentDTO));
         // 数据校验
@@ -100,6 +100,7 @@ public class QuestionController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/delete")
     public BaseResponse<Boolean> deleteQuestion(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
@@ -210,6 +211,7 @@ public class QuestionController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<QuestionVO>> listMyQuestionVOByPage(@RequestBody QuestionQueryRequest questionQueryRequest,
                                                                  HttpServletRequest request) {
@@ -235,6 +237,7 @@ public class QuestionController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/edit")
     public BaseResponse<Boolean> editQuestion(@RequestBody QuestionEditRequest questionEditRequest, HttpServletRequest request) {
         if (questionEditRequest == null || questionEditRequest.getId() <= 0) {
@@ -307,6 +310,7 @@ public class QuestionController {
             @RequestBody AiGenerateQuestionRequest aiGenerateQuestionRequest) {
         ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
         // 获取参数
+        @SuppressWarnings("null")
         Long appId = aiGenerateQuestionRequest.getAppId();
         int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
         int optionNumber = aiGenerateQuestionRequest.getOptionNumber();
@@ -329,6 +333,7 @@ public class QuestionController {
     public SseEmitter aiGenerateQuestionSSE(AiGenerateQuestionRequest aiGenerateQuestionRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
         // 获取参数
+        @SuppressWarnings("null")
         Long appId = aiGenerateQuestionRequest.getAppId();
         int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
         int optionNumber = aiGenerateQuestionRequest.getOptionNumber();
@@ -396,6 +401,7 @@ public class QuestionController {
                                                 boolean isVip) {
         ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
         // 获取参数
+        @SuppressWarnings("null")
         Long appId = aiGenerateQuestionRequest.getAppId();
         int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
         int optionNumber = aiGenerateQuestionRequest.getOptionNumber();

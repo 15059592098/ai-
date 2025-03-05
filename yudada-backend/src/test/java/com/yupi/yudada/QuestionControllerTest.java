@@ -2,7 +2,7 @@ package com.yupi.yudada;
 
 import com.yupi.yudada.controller.QuestionController;
 import com.yupi.yudada.model.dto.question.AiGenerateQuestionRequest;
-import org.checkerframework.checker.units.qual.A;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,6 +14,7 @@ public class QuestionControllerTest {
     @Resource
     private QuestionController questionController;
 
+    @SuppressWarnings("deprecation")
     @Test
     void aiGenerateQuestionSSETest() throws InterruptedException {
         // 模拟调用

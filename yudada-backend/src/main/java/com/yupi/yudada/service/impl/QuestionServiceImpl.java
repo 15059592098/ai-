@@ -56,6 +56,7 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question> i
     public void validQuestion(Question question, boolean add) {
         ThrowUtils.throwIf(question == null, ErrorCode.PARAMS_ERROR);
         // 从对象中取值
+        @SuppressWarnings("null")
         String questionContent = question.getQuestionContent();
         Long appId = question.getAppId();
         // 创建数据时，参数不能为空

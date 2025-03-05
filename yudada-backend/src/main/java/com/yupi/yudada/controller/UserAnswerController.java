@@ -65,6 +65,7 @@ public class UserAnswerController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/add")
     public BaseResponse<Long> addUserAnswer(@RequestBody UserAnswerAddRequest userAnswerAddRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(userAnswerAddRequest == null, ErrorCode.PARAMS_ERROR);
@@ -114,6 +115,7 @@ public class UserAnswerController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/delete")
     public BaseResponse<Boolean> deleteUserAnswer(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
@@ -224,6 +226,7 @@ public class UserAnswerController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<UserAnswerVO>> listMyUserAnswerVOByPage(@RequestBody UserAnswerQueryRequest userAnswerQueryRequest,
                                                                      HttpServletRequest request) {
@@ -249,6 +252,7 @@ public class UserAnswerController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/edit")
     public BaseResponse<Boolean> editUserAnswer(@RequestBody UserAnswerEditRequest userAnswerEditRequest, HttpServletRequest request) {
         if (userAnswerEditRequest == null || userAnswerEditRequest.getId() <= 0) {

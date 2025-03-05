@@ -54,6 +54,7 @@ public class AppServiceImpl extends ServiceImpl<AppMapper, App> implements AppSe
     public void validApp(App app, boolean add) {
         ThrowUtils.throwIf(app == null, ErrorCode.PARAMS_ERROR);
         // 从对象中取值
+        @SuppressWarnings("null")
         String appName = app.getAppName();
         String appDesc = app.getAppDesc();
         Integer appType = app.getAppType();

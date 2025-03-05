@@ -59,6 +59,7 @@ public class ScoringResultController {
         // 在此处将实体类和 DTO 进行转换
         ScoringResult scoringResult = new ScoringResult();
         BeanUtils.copyProperties(scoringResultAddRequest, scoringResult);
+        @SuppressWarnings("null")
         List<String> resultProp = scoringResultAddRequest.getResultProp();
         scoringResult.setResultProp(JSONUtil.toJsonStr(resultProp));
         // 数据校验
@@ -81,6 +82,7 @@ public class ScoringResultController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/delete")
     public BaseResponse<Boolean> deleteScoringResult(@RequestBody DeleteRequest deleteRequest, HttpServletRequest request) {
         if (deleteRequest == null || deleteRequest.getId() <= 0) {
@@ -191,6 +193,7 @@ public class ScoringResultController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/my/list/page/vo")
     public BaseResponse<Page<ScoringResultVO>> listMyScoringResultVOByPage(@RequestBody ScoringResultQueryRequest scoringResultQueryRequest,
                                                                  HttpServletRequest request) {
@@ -216,6 +219,7 @@ public class ScoringResultController {
      * @param request
      * @return
      */
+    @SuppressWarnings("null")
     @PostMapping("/edit")
     public BaseResponse<Boolean> editScoringResult(@RequestBody ScoringResultEditRequest scoringResultEditRequest, HttpServletRequest request) {
         if (scoringResultEditRequest == null || scoringResultEditRequest.getId() <= 0) {

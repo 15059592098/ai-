@@ -56,6 +56,7 @@ public class UserAnswerServiceImpl extends ServiceImpl<UserAnswerMapper, UserAns
     public void validUserAnswer(UserAnswer userAnswer, boolean add) {
         ThrowUtils.throwIf(userAnswer == null, ErrorCode.PARAMS_ERROR);
         // 从对象中取值
+        @SuppressWarnings("null")
         Long appId = userAnswer.getAppId();
         Long id = userAnswer.getId();
         // 创建数据时，参数不能为空
